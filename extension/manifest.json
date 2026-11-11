@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Link Lens - Website Inspector",
+  "version": "0.2.0",
+  "description": "Inspect the current website's domain, forms, resources, and security details, with optional local backend and LLM analysis.",
+  "minimum_chrome_version": "114",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "Inspect this website - Link Lens", "default_icon": { "16": "icons/icon-16.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" } },
+  "icons": { "16": "icons/icon-16.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" },
+  "options_page": "report.html?settings=1",
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' http://127.0.0.1:* http://localhost:*; object-src 'none'; base-uri 'none'"
+  }
+}
