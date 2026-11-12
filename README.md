@@ -1,6 +1,8 @@
 # Link Lens - Website Inspector
 
-A Chrome and Edge extension for inspecting the website in your current tab. Basic inspection runs locally without an account, backend, or language model. Reports separate observed facts, items to review, and unknown information. Link Lens does not assign safety scores or guarantee that a website is trustworthy.
+Link Lens helps you inspect the website in your current tab and make informed browsing decisions. It brings page structure, form destinations, external resource origins, and optional network checks into one evidence-based report. An optional OpenAI-compatible LLM explains the findings, suggests next steps, and highlights what still needs verification.
+
+Basic inspection runs locally in Chrome and Edge without an account, backend, or language model. You choose when to run network checks and what to share with a model. Reports keep observed facts, interpretations, and unknown information clearly separated.
 
 ## Installation
 
@@ -60,6 +62,10 @@ Requests may incur charges under your provider's terms and occur only after conf
 Optional excerpts exclude form fields, editable areas, scripts, and selected hidden content. Redaction attempts to remove email addresses, long numbers, and common key formats, but cannot guarantee removal of every private detail. Review the payload before sending it. Body text is excluded by default.
 
 Page titles, text, response headers, and certificate fields are untrusted data. The backend gives the model no browser or network tools, requests evidence-based English output, and validates the returned JSON. Results are rendered as plain text. Models can still make mistakes or be influenced by hostile content, so model explanations remain separate from observed facts.
+
+## Limitations
+
+Reports support manual review of the evidence collected for a specific check. The current version does not calculate a validated overall safety score or certify website trustworthiness.
 
 This version does not query WHOIS, registration dates, reputation databases, real ownership, or historical records. It is not a vulnerability scanner. HTTPS, third-party scripts, or a missing response header alone do not prove that a website is trustworthy or malicious.
 
